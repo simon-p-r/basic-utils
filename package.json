@@ -1,0 +1,22 @@
+{
+  "name": "basic-utils",
+  "version": "0.0.1",
+  "description": "basic js utils",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "lab -a code -v -t 95 -L"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:simon-p-r/basic-utils.git"
+  },
+  "author": "simon-p-r <simon.ricaldone@circabs.com> (https://github.com/simon-p-r)",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "code": "^1.5.0",
+    "lab": "^6.2.0"
+  }
+}

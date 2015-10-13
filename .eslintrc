@@ -1,0 +1,6 @@
+{
+    "extends": "./node_modules/lab/lib/linters/eslint/.eslintrc",
+    "rules": {
+        "no-array-constructor": 0
+    }
+}
