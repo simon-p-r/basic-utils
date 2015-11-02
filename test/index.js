@@ -1,21 +1,21 @@
-// Load modules
+'use strict';
 
-var Code = require('code');
-var Lab = require('lab');
-var Utils = require('../lib/index.js');
+const Code = require('code');
+const Lab = require('lab');
+const Utils = require('../lib/index.js');
 
 
 // Set-up lab
-var lab = exports.lab = Lab.script();
-var describe = lab.describe;
-var it = lab.it;
-var expect = Code.expect;
+const lab = exports.lab = Lab.script();
+const describe = lab.describe;
+const it = lab.it;
+const expect = Code.expect;
 
-describe('Utils', function () {
+describe('Utils', () => {
 
-    it('should test isObj method', function (done) {
+    it('should test isObj method', (done) => {
 
-        var func = function (){};
+        const func = function (){};
         expect(Utils.isObj({})).to.be.true();
         expect(Utils.isObj(Object.create(null))).to.be.false();
         expect(Utils.isObj(new Date())).to.be.false();
@@ -42,9 +42,9 @@ describe('Utils', function () {
 
     });
 
-    it('should test isArray method', function (done) {
+    it('should test isArray method', (done) => {
 
-        var func = function (){};
+        const func = function (){};
         expect(Utils.isArray(['hello', 'world'])).to.be.true();
         expect(Utils.isArray([1, 2, 3])).to.be.true();
         expect(Utils.isArray([])).to.be.true();
@@ -60,9 +60,9 @@ describe('Utils', function () {
 
     });
 
-    it('should test isString method', function (done) {
+    it('should test isString method', (done) => {
 
-        var func = function (){};
+        const func = function (){};
         expect(Utils.isString('hello')).to.be.true();
         expect(Utils.isString('     ')).to.be.true();
         expect(Utils.isString([])).to.be.false();
@@ -77,7 +77,7 @@ describe('Utils', function () {
 
     });
 
-    it('should test isDate method', function (done) {
+    it('should test isDate method', (done) => {
 
         expect(Utils.isDate(new Date())).to.be.true();
         expect(Utils.isDate(new Date('11/30/2011'))).to.be.true();
@@ -88,7 +88,7 @@ describe('Utils', function () {
 
     });
 
-    it('should test isRegex method', function (done) {
+    it('should test isRegex method', (done) => {
 
         expect(Utils.isRegex(new RegExp())).to.be.true();
         expect(Utils.isRegex(/ab+c/)).to.be.true();
@@ -99,14 +99,46 @@ describe('Utils', function () {
 
     });
 
-    it('should test serialize method', function (done) {
+    it('should test isFunction method', (done) => {
 
-        var fn = function () {};
-        var toString = {
+        const func = (hello) => {
+
+            return hello;
+        };
+        const any = function (hello) {
+
+            return hello;
+        };
+        expect(Utils.isFunction(func)).to.be.true();
+        expect(Utils.isFunction(any)).to.be.true();
+        expect(Utils.isFunction(/ab+c/)).to.be.false();
+        expect(Utils.isFunction('string')).to.be.false();
+        expect(Utils.isFunction([])).to.be.false();
+        expect(Utils.isFunction()).to.be.false();
+        done();
+
+    });
+
+    it('should test isObjectID method', (done) => {
+
+        expect(Utils.isObjectID('534b4dcaadc0c2136938de3a')).to.be.true();
+        expect(Utils.isObjectID(/ab+c/)).to.be.false();
+        expect(Utils.isObjectID('string')).to.be.false();
+        expect(Utils.isObjectID([])).to.be.false();
+        expect(Utils.isObjectID()).to.be.false();
+        expect(Utils.isObjectID({})).to.be.false();
+        done();
+
+    });
+
+    it('should test serialize method', (done) => {
+
+        const fn = function () {};
+        const toString = {
             hello: null,
             int: 123
         };
-        var obj = {};
+        const obj = {};
         obj.a = {
             b: obj
         };
@@ -116,11 +148,11 @@ describe('Utils', function () {
         done();
     });
 
-    it('should test deserialize method', function (done) {
+    it('should test deserialize method', (done) => {
 
-        var fn = function () {};
-        var deserialize = Utils.serialize(fn);
-        var date = Utils.serialize(new Date());
+        const fn = function () {};
+        const deserialize = Utils.serialize(fn);
+        const date = Utils.serialize(new Date());
         expect(Utils.deserialize(deserialize)).to.be.a.function();
         expect(Utils.deserialize(date)).to.be.a.string();
         expect(Utils.deserialize('[1,2,3]')).to.be.an.array();

@@ -24,7 +24,11 @@ Basic JS utils module
 
   - Returns boolean
 
-###### isRegex
+###### isFunction
+
+  - Returns boolean
+
+###### isObjectID
 
   - Returns boolean
 
