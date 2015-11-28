@@ -119,6 +119,53 @@ describe('Utils', () => {
 
     });
 
+    it('should test isNumber method', (done) => {
+
+        const func = (hello) => {
+
+            return hello;
+        };
+        expect(Utils.isNumber(1234)).to.be.true();
+        expect(Utils.isNumber(12.00)).to.be.true();
+        expect(Utils.isNumber(NaN)).to.be.false();
+        expect(Utils.isNumber('1234')).to.be.false();
+        expect(Utils.isNumber(Infinity)).to.be.true();
+        expect(Utils.isNumber(func)).to.be.false();
+        expect(Utils.isNumber(/ab+c/)).to.be.false();
+        expect(Utils.isNumber('string')).to.be.false();
+        expect(Utils.isNumber([])).to.be.false();
+        expect(Utils.isNumber()).to.be.false();
+        done();
+
+    });
+
+    it('should test isUndefined method', (done) => {
+
+        const nill = (hello) => {
+
+            return;
+        };
+        const func = (hello) => {
+
+            return hello;
+        };
+        let undef;
+        const def = 'defined';
+        expect(Utils.isUndefined(undef)).to.be.true();
+        expect(Utils.isUndefined(nill())).to.be.true();
+        expect(Utils.isUndefined()).to.be.true();
+        expect(!Utils.isUndefined(def)).to.be.true();
+        expect(Utils.isUndefined(NaN)).to.be.false();
+        expect(Utils.isUndefined('1234')).to.be.false();
+        expect(Utils.isUndefined(func)).to.be.false();
+        expect(Utils.isUndefined(/ab+c/)).to.be.false();
+        expect(Utils.isUndefined('string')).to.be.false();
+        expect(Utils.isUndefined([])).to.be.false();
+
+        done();
+
+    });
+
     it('should test isObjectID method', (done) => {
 
         expect(Utils.isObjectID('534b4dcaadc0c2136938de3a')).to.be.true();

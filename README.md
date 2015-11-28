@@ -28,6 +28,14 @@ Basic JS utils module
 
   - Returns boolean
 
+###### isNumber
+
+  - Returns boolean
+
+###### isUndefined
+
+  - Returns boolean
+
 ###### isObjectID
 
   - Returns boolean
