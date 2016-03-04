@@ -36,6 +36,10 @@ Basic JS utils module
 
   - Returns boolean
 
+###### isNull
+
+  - Returns boolean
+
 ###### isObjectID
 
   - Returns boolean

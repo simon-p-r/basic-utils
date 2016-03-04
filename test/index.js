@@ -56,6 +56,7 @@ describe('Utils', () => {
         expect(Utils.isArray()).to.be.false();
         expect(Utils.isArray({})).to.be.false();
         expect(Utils.isArray(' oooppp')).to.be.false();
+        expect(!Utils.isArray(null)).to.be.true();
         done();
 
     });
@@ -161,7 +162,33 @@ describe('Utils', () => {
         expect(Utils.isUndefined(/ab+c/)).to.be.false();
         expect(Utils.isUndefined('string')).to.be.false();
         expect(Utils.isUndefined([])).to.be.false();
+        done();
 
+    });
+
+    it('should test isNull method', (done) => {
+
+        const nill = (hello) => {
+
+            return;
+        };
+        const func = (hello) => {
+
+            return hello;
+        };
+        const undef = undefined;
+        const def = 'notNull';
+        expect(Utils.isNull(null)).to.be.true();
+        expect(Utils.isNull()).to.be.false();
+        expect(Utils.isNull(undef)).to.be.false();
+        expect(Utils.isNull(nill())).to.be.false();
+        expect(!Utils.isNull(def)).to.be.true();
+        expect(Utils.isNull(NaN)).to.be.false();
+        expect(Utils.isNull('1234')).to.be.false();
+        expect(Utils.isNull(func)).to.be.false();
+        expect(Utils.isNull(/ab+c/)).to.be.false();
+        expect(Utils.isNull('string')).to.be.false();
+        expect(Utils.isNull([])).to.be.false();
         done();
 
     });
