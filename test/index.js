@@ -193,6 +193,33 @@ describe('Utils', () => {
 
     });
 
+    it('should test isEmpty method', (done) => {
+
+        const nill = (hello) => {
+
+            return;
+        };
+        const func = (hello) => {
+
+            return hello;
+        };
+        const undef = undefined;
+        const def = 'notNull';
+        expect(Utils.isEmpty(null)).to.be.true();
+        expect(Utils.isEmpty()).to.be.true();
+        expect(Utils.isEmpty(undef)).to.be.true();
+        expect(Utils.isEmpty(nill())).to.be.true();
+        expect(!Utils.isEmpty(def)).to.be.true();
+        expect(Utils.isEmpty(NaN)).to.be.false();
+        expect(Utils.isEmpty('1234')).to.be.false();
+        expect(Utils.isEmpty(func)).to.be.false();
+        expect(Utils.isEmpty(/ab+c/)).to.be.false();
+        expect(Utils.isEmpty('string')).to.be.false();
+        expect(Utils.isEmpty([])).to.be.false();
+        done();
+
+    });
+
     it('should test isObjectID method', (done) => {
 
         expect(Utils.isObjectID('534b4dcaadc0c2136938de3a')).to.be.true();

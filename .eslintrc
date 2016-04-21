@@ -1,5 +1,5 @@
 {
-    "extends": "./node_modules/lab/lib/linters/eslint/.eslintrc",
+    "extends": "./node_modules/lab/lib/linter/.eslintrc.js",
     "rules": {
         "no-array-constructor": 0
     }
