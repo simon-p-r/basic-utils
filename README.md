@@ -44,6 +44,23 @@ Basic JS utils module
 
   - Returns boolean
 
+###### isIp
+
+  - Returns boolean
+
+###### isIp4
+
+  - Returns boolean
+
+###### isIp6
+
+  - Returns boolean
+
+###### isMac
+
+  - Returns boolean
+
+
 ###### serialize
 
   - Returns either an error object or a json serialized string

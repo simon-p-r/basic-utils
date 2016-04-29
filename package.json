@@ -1,6 +1,6 @@
 {
   "name": "basic-utils",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "basic js utils",
   "main": "lib/index.js",
   "directories": {
@@ -16,8 +16,8 @@
   "author": "simon-p-r <simon.ricaldone@circabs.com> (https://github.com/simon-p-r)",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "code": "^2.2.0",
-    "lab": "^10.3.1"
+    "code": "^2.2.1",
+    "lab": "^10.3.2"
   },
   "dependencies": {}
 }

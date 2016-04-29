@@ -1,6 +1,0 @@
-{
-    "extends": "./node_modules/lab/lib/linter/.eslintrc.js",
-    "rules": {
-        "no-array-constructor": 0
-    }
-}

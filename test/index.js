@@ -4,6 +4,8 @@ const Code = require('code');
 const Lab = require('lab');
 const Utils = require('../lib/index.js');
 
+// Fixtures
+const Types = require('./fixtures/types.js');
 
 // Set-up lab
 const lab = exports.lab = Lab.script();
@@ -15,65 +17,38 @@ describe('Utils', () => {
 
     it('should test isObj method', (done) => {
 
-        const func = function (){};
+        Types.nonObject.forEach((type) => {
+
+            expect(Utils.isObj(type)).to.be.false();
+        });
+
         expect(Utils.isObj({})).to.be.true();
-        expect(Utils.isObj(Object.create(null))).to.be.false();
-        expect(Utils.isObj(new Date())).to.be.false();
-        expect(Utils.isObj(new RegExp())).to.be.false();
-        expect(Utils.isObj(undefined)).to.be.false();
-        expect(Utils.isObj()).to.be.false();
-        expect(Utils.isObj(null)).to.be.false();
-        expect(Utils.isObj('Hello ')).to.be.false();
-        expect(Utils.isObj(1234)).to.be.false();
-        expect(Utils.isObj(func)).to.be.false();
-        expect(Utils.isObj(Infinity)).to.be.false();
-        expect(Utils.isObj(NaN)).to.be.false();
-        expect(Utils.isObj(Boolean)).to.be.false();
-        expect(Utils.isObj(true)).to.be.false();
-        expect(Utils.isObj(new Error())).to.be.false();
-        expect(Utils.isObj(Error)).to.be.false();
-        expect(Utils.isObj(new EvalError())).to.be.false();
-        expect(Utils.isObj(new RangeError())).to.be.false();
-        expect(Utils.isObj(new ReferenceError())).to.be.false();
-        expect(Utils.isObj(new SyntaxError())).to.be.false();
-        expect(Utils.isObj(new TypeError())).to.be.false();
-        expect(Utils.isObj(new URIError())).to.be.false();
+
         done();
 
     });
 
     it('should test isArray method', (done) => {
 
-        const func = function (){};
         expect(Utils.isArray(['hello', 'world'])).to.be.true();
-        expect(Utils.isArray([1, 2, 3])).to.be.true();
-        expect(Utils.isArray([])).to.be.true();
-        expect(Utils.isArray(new Array({ key: 'value' }, { key: 'value' }))).to.be.true();
-        expect(Utils.isArray(['hello', 'world'])).to.be.true();
-        expect(Utils.isArray(Object.create(new Array()))).to.be.true();
-        expect(Utils.isArray(arguments)).to.be.false();
-        expect(Utils.isArray(func)).to.be.false();
-        expect(Utils.isArray()).to.be.false();
-        expect(Utils.isArray({})).to.be.false();
-        expect(Utils.isArray(' oooppp')).to.be.false();
-        expect(!Utils.isArray(null)).to.be.true();
+        Types.nonArray.forEach((type) => {
+
+            expect(Utils.isArray(type)).to.be.false();
+        });
+
         done();
 
     });
 
     it('should test isString method', (done) => {
 
-        const func = function (){};
         expect(Utils.isString('hello')).to.be.true();
-        expect(Utils.isString('     ')).to.be.true();
-        expect(Utils.isString([])).to.be.false();
-        expect(Utils.isString(new Array({ key: 'value' }, { key: 'value' }))).to.be.false();
-        expect(Utils.isString(['hello', 'world'])).to.be.false();
-        expect(Utils.isString(Object.create(new Array()))).to.be.false();
-        expect(Utils.isString(arguments)).to.be.false();
-        expect(Utils.isString()).to.be.false();
-        expect(Utils.isString(func)).to.be.false();
-        expect(Utils.isString({})).to.be.false();
+        expect(Utils.isString(`test ${process.env.TMP}`)).to.be.true();
+        Types.nonString.forEach((type) => {
+
+            expect(Utils.isString(type)).to.be.false();
+        });
+
         done();
 
     });
@@ -122,20 +97,12 @@ describe('Utils', () => {
 
     it('should test isNumber method', (done) => {
 
-        const func = (hello) => {
-
-            return hello;
-        };
         expect(Utils.isNumber(1234)).to.be.true();
         expect(Utils.isNumber(12.00)).to.be.true();
-        expect(Utils.isNumber(NaN)).to.be.false();
-        expect(Utils.isNumber('1234')).to.be.false();
-        expect(Utils.isNumber(Infinity)).to.be.true();
-        expect(Utils.isNumber(func)).to.be.false();
-        expect(Utils.isNumber(/ab+c/)).to.be.false();
-        expect(Utils.isNumber('string')).to.be.false();
-        expect(Utils.isNumber([])).to.be.false();
-        expect(Utils.isNumber()).to.be.false();
+        Types.nonInt.forEach((type) => {
+
+            expect(Utils.isNumber(type)).to.be.false();
+        });
         done();
 
     });
@@ -146,22 +113,17 @@ describe('Utils', () => {
 
             return;
         };
-        const func = (hello) => {
 
-            return hello;
-        };
         let undef;
-        const def = 'defined';
+
+        Types.nonUndef.forEach((type) => {
+
+            expect(Utils.isUndefined(type)).to.be.false();
+        });
+
         expect(Utils.isUndefined(undef)).to.be.true();
         expect(Utils.isUndefined(nill())).to.be.true();
         expect(Utils.isUndefined()).to.be.true();
-        expect(!Utils.isUndefined(def)).to.be.true();
-        expect(Utils.isUndefined(NaN)).to.be.false();
-        expect(Utils.isUndefined('1234')).to.be.false();
-        expect(Utils.isUndefined(func)).to.be.false();
-        expect(Utils.isUndefined(/ab+c/)).to.be.false();
-        expect(Utils.isUndefined('string')).to.be.false();
-        expect(Utils.isUndefined([])).to.be.false();
         done();
 
     });
@@ -223,11 +185,64 @@ describe('Utils', () => {
     it('should test isObjectID method', (done) => {
 
         expect(Utils.isObjectID('534b4dcaadc0c2136938de3a')).to.be.true();
-        expect(Utils.isObjectID(/ab+c/)).to.be.false();
-        expect(Utils.isObjectID('string')).to.be.false();
-        expect(Utils.isObjectID([])).to.be.false();
-        expect(Utils.isObjectID()).to.be.false();
-        expect(Utils.isObjectID({})).to.be.false();
+        Types.nonUndef.forEach((type) => {
+
+            expect(Utils.isObjectID(type)).to.be.false();
+        });
+
+        Types.nonObject.forEach((type) => {
+
+            expect(Utils.isObjectID(type)).to.be.false();
+        });
+        done();
+
+    });
+
+    it('should test isIP', (done) => {
+
+        Types.v4.forEach((type) => {
+
+            expect(Utils.isIp(type)).to.be.true();
+            expect(Utils.isIp4(type)).to.be.true();
+        });
+
+        Types.v4not.forEach((type) => {
+
+            expect(Utils.isIp(type)).to.be.false();
+            expect(Utils.isIp4(type)).to.be.false();
+        });
+
+        Types.v6.forEach((type) => {
+
+            expect(Utils.isIp(type)).to.be.true();
+            expect(Utils.isIp6(type)).to.be.true();
+        });
+
+        Types.v6not.forEach((type) => {
+
+            expect(Utils.isIp(type)).to.be.false();
+            expect(Utils.isIp6(type)).to.be.false();
+        });
+
+        expect(Utils.isIp()).to.be.false();
+        expect(Utils.isIp4()).to.be.false();
+        expect(Utils.isIp6()).to.be.false();
+        done();
+
+    });
+
+    it('should test isMac', (done) => {
+
+        Types.mac.forEach((m) => {
+
+            expect(Utils.isMac(m)).to.be.true();
+        });
+
+        Types.notMac.forEach((m) => {
+
+            expect(Utils.isMac(m)).to.be.false();
+        });
+
         done();
 
     });
