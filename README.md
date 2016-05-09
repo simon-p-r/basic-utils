@@ -4,6 +4,8 @@ Basic JS utils module
 
 ### API
 
+#### Types
+
 ###### isObj
 
  - Returns boolean
@@ -60,6 +62,23 @@ Basic JS utils module
 
   - Returns boolean
 
+###### isFQDN
+
+  - Returns boolean
+
+#### Utils
+
+###### iterateObj
+
+   - prints object key pairs with a tilde delimiter
+
+###### format
+
+   - formats a string
+
+###### deepFreeze
+
+   - returns a recursive frozen object
 
 ###### serialize
 
@@ -68,3 +87,34 @@ Basic JS utils module
 ###### deserialize
 
   - Returns either an error object or an js object deserialized from a json string
+
+#### FileSystem
+
+###### dirExists
+
+  - Returns boolean if directory exists
+
+###### fileExists
+
+  - Returns boolean if file exists
+
+###### rmDirSync
+
+ - recursively deletes a directory sync
+
+###### rmDir
+
+ - recursively deletes a directory async
+
+###### mkDirSync
+
+ - recursively makes directory sync
+
+###### mkDir
+ - recursively makes directory async
+
+
+##### Todo
+
+ - improve docs
+ - add more tests

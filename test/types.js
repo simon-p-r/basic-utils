@@ -13,7 +13,7 @@ const describe = lab.describe;
 const it = lab.it;
 const expect = Code.expect;
 
-describe('Utils', () => {
+describe('Type', () => {
 
     it('should test isObj method', (done) => {
 
@@ -231,6 +231,24 @@ describe('Utils', () => {
 
     });
 
+    it('should test isFQDN', (done) => {
+
+        Types.notFQDN.forEach((type) => {
+
+            expect(Utils.isFQDN(type)).to.be.false();
+        });
+
+        Types.FQDN.forEach((type) => {
+
+            expect(Utils.isFQDN(type)).to.be.true();
+        });
+
+
+        expect(Utils.isFQDN()).to.be.false();
+        done();
+
+    });
+
     it('should test isMac', (done) => {
 
         Types.mac.forEach((m) => {
@@ -247,32 +265,5 @@ describe('Utils', () => {
 
     });
 
-    it('should test serialize method', (done) => {
 
-        const fn = function () {};
-        const toString = {
-            hello: null,
-            int: 123
-        };
-        const obj = {};
-        obj.a = {
-            b: obj
-        };
-        expect(Utils.serialize(fn)).to.be.a.string();
-        expect(Utils.serialize(toString)).to.be.a.string();
-        expect(Utils.serialize(obj)).to.be.an.instanceof(Error);
-        done();
-    });
-
-    it('should test deserialize method', (done) => {
-
-        const fn = function () {};
-        const deserialize = Utils.serialize(fn);
-        const date = Utils.serialize(new Date());
-        expect(Utils.deserialize(deserialize)).to.be.a.function();
-        expect(Utils.deserialize(date)).to.be.a.string();
-        expect(Utils.deserialize('[1,2,3]')).to.be.an.array();
-        expect(Utils.deserialize(new RegExp())).to.be.an.instanceof(Error);
-        done();
-    });
 });

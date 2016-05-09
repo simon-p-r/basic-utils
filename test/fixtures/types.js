@@ -171,7 +171,6 @@ module.exports = {
     ],
 
     notMac: [
-
         '',
         'invalid',
         [],
@@ -180,6 +179,40 @@ module.exports = {
         null,
         undefined,
         'e4:ce:8f:5b:a7fe'
+    ],
+
+    notFQDN: [
+        '',
+        // 'invalid',
+        [],
+        {},
+        new RegExp(),
+        null,
+        undefined,
+        'e4:ce:8f:5b:a7fe',
+        'notvalid.com.',
+        '.notvalid.com',
+        '-notvalid.com',
+        'notvalid.com-',
+        'ths.598e882b9f56330b32b4932513e1f491050b94b2de8d5983a3beee2a62100dfa41593d9b045f2bahjb005d69d493907dd0bac44963f87bca570fc03e5e40b49629c2',
+        'invalid.helloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworld'
+    ],
+
+    FQDN: [
+        'some-example.construction',
+        'example.co.uk',
+        'example.aerodrome.aero',
+        'g.co',
+        'test--dashes-to.com',
+        'example.blackfriday',
+        'test-name.co.uk',
+        'a.domain',
+        'www.domain.com',
+        'www.goggle.co.uk',
+        'www.google.com',
+        'a.test.co',
+        'test.com',
+        'example.test.net'
     ]
 
 
