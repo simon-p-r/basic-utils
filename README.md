@@ -34,6 +34,10 @@ Basic JS utils module
 
   - Returns boolean
 
+###### isNan
+
+  - Returns boolean
+
 ###### isUndefined
 
   - Returns boolean

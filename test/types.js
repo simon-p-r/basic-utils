@@ -28,6 +28,19 @@ describe('Type', () => {
 
     });
 
+    it('should test isNan method', (done) => {
+
+        Types.nonNan.forEach((type) => {
+
+            expect(Utils.isNan(type)).to.be.false();
+        });
+
+        expect(Utils.isNan(NaN)).to.be.true();
+
+        done();
+
+    });
+
     it('should test isArray method', (done) => {
 
         expect(Utils.isArray(['hello', 'world'])).to.be.true();

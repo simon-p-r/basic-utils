@@ -44,6 +44,27 @@ module.exports = {
 
     ],
 
+    nonNan: [
+        null,
+        undefined,
+        [],
+        function () {},
+        1234,
+        Infinity,
+        'test',
+        new Date(),
+        new RegExp(),
+        new Error(),
+        new TypeError(),
+        new RangeError(),
+        new EvalError(),
+        new URIError(),
+        Boolean,
+        Error,
+        true
+
+    ],
+
     nonArray: [
         null,
         undefined,
