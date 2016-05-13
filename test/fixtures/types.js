@@ -203,19 +203,26 @@ module.exports = {
     ],
 
     notFQDN: [
-        '',
-        // 'invalid',
-        [],
-        {},
-        new RegExp(),
-        null,
         undefined,
+        null,
+        true,
+        '',
+        'invalid',
+        '$xample.com',
+        'domain_name.com',
+        'abc',
+        '256.0.0.0',
+        '_.com',
+        '*.some.com',
+        's!ome.com',
+        'domain.com/',
+        '/more.com',
         'e4:ce:8f:5b:a7fe',
         'notvalid.com.',
         '.notvalid.com',
         '-notvalid.com',
         'notvalid.com-',
-        'ths.598e882b9f56330b32b4932513e1f491050b94b2de8d5983a3beee2a62100dfa41593d9b045f2bahjb005d69d493907dd0bac44963f87bca570fc03e5e40b49629c2',
+        '598e882b9f56330b32b4932513e1f491050b94b2de8d5983a3beee2a62100dfa41593d9b045f2bahjb005d69d493907dd0bac44963f87bca570fc03e5e40b49629c2',
         'invalid.helloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworldhelloworld'
     ],
 
@@ -233,7 +240,13 @@ module.exports = {
         'www.google.com',
         'a.test.co',
         'test.com',
-        'example.test.net'
+        'example.test.net',
+        'domain.com',
+        'dom.plato',
+        'a.domain.co',
+        'foo--bar.com',
+        'xn--froschgrn-x9a.com',
+        'rebecca.blackfriday'
     ]
 
 
