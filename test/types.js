@@ -112,6 +112,9 @@ describe('Type', () => {
 
         expect(Utils.isNumber(1234)).to.be.true();
         expect(Utils.isNumber(12.00)).to.be.true();
+        expect(Utils.isNumber(Infinity)).to.be.true();
+
+        expect(Utils.isNumber(NaN)).to.be.false();
         Types.nonInt.forEach((type) => {
 
             expect(Utils.isNumber(type)).to.be.false();

@@ -188,7 +188,12 @@ module.exports = {
         '3d-f2-c9-a6-b3-4f',
         'e4:ce:8f:5b:a7:fc',
         'e4-ce-8f-5b-a7-fe',
-        '00:18:31:8A:41:C6'
+        '00:18:31:8A:41:C6',
+        'ab:ab:ab:ab:ab:ab',
+        'FF:FF:FF:FF:FF:FF',
+        '01:02:03:04:05:ab',
+        '01:AB:03:04:05:06',
+        '00:00:00:00:00:00'
     ],
 
     notMac: [
@@ -199,7 +204,12 @@ module.exports = {
         new RegExp(),
         null,
         undefined,
-        'e4:ce:8f:5b:a7fe'
+        'e4:ce:8f:5b:a7fe',
+        'abc',
+        '01:02:03:04:05',
+        '01:02:03:04::ab',
+        '1:2:3:4:5:6',
+        'AB:CD:EF:GH:01:02'
     ],
 
     notFQDN: [
