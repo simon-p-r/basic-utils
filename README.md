@@ -1,4 +1,6 @@
-# basic-utils [![build status](https://travis-ci.org/simon-p-r/basic-utils.svg?branch=master)](https://travis-ci.org/simon-p-r/basic-utils)
+# basic-utils
+[![build status](https://travis-ci.org/simon-p-r/basic-utils.svg?branch=master)](https://travis-ci.org/simon-p-r/basic-utils)
+[![Coverage Status](https://coveralls.io/repos/github/simon-p-r/basic-utils/badge.svg?branch=master)](https://coveralls.io/github/simon-p-r/basic-utils?branch=master)
 
 Basic JS utils module
 
