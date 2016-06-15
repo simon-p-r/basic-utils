@@ -47,6 +47,7 @@ module.exports = {
     nonNan: [
         null,
         undefined,
+        {},
         [],
         function () {},
         1234,
@@ -257,6 +258,148 @@ module.exports = {
         'foo--bar.com',
         'xn--froschgrn-x9a.com',
         'rebecca.blackfriday'
+    ],
+
+    int8: [
+        -128,
+        -56,
+        0,
+        54,
+        127
+    ],
+
+    notInt8: [
+        'some-example.construction',
+        null,
+        undefined,
+        {},
+        null,
+        NaN,
+        Infinity,
+        -129,
+        128
+    ],
+
+    uInt8: [
+        0,
+        255,
+        103,
+        10.00,
+        34,
+        11,
+        67
+    ],
+
+    notUint8: [
+        'some-example.construction',
+        NaN,
+        Infinity,
+        -10,
+        256,
+        null,
+        undefined,
+        {},
+        []
+    ],
+
+
+    int16: [
+        0,
+        255,
+        103,
+        10.00,
+        34,
+        11,
+        67,
+        32767,
+        -32768
+    ],
+
+    notInt16: [
+        'some-example.construction',
+        NaN,
+        Infinity,
+        -32769,
+        32768,
+        null,
+        undefined,
+        {},
+        []
+    ],
+
+    uInt16: [
+        0,
+        255,
+        103,
+        10.00,
+        34,
+        11,
+        67,
+        32767,
+        65535
+    ],
+
+    notUint16: [
+        'some-example.construction',
+        NaN,
+        Infinity,
+        -32769,
+        65536,
+        null,
+        undefined,
+        {},
+        []
+    ],
+
+    int32: [
+        0,
+        255,
+        103,
+        10.00,
+        34,
+        11,
+        67,
+        32767,
+        -32768,
+        -2147483648,
+        2147483647
+    ],
+
+    notInt32: [
+        'some-example.construction',
+        NaN,
+        Infinity,
+        -2147483649,
+        2147483648,
+        null,
+        undefined,
+        {},
+        []
+    ],
+
+    uInt32: [
+        0,
+        255,
+        103,
+        10.00,
+        34,
+        11,
+        67,
+        32767,
+        65535,
+        4294967295
+    ],
+
+    notUint32: [
+        'some-example.construction',
+        NaN,
+        Infinity,
+        -32769,
+        4294967296,
+        null,
+        undefined,
+        {},
+        []
     ]
 
 

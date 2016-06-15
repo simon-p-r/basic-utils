@@ -36,7 +36,6 @@ describe('Type', () => {
         });
 
         expect(Utils.isNan(NaN)).to.be.true();
-
         done();
 
     });
@@ -247,6 +246,25 @@ describe('Type', () => {
 
     });
 
+    it('should test isMac', (done) => {
+
+        Types.notMac.forEach((type) => {
+
+            expect(Utils.isMac(type)).to.be.false();
+        });
+
+        Types.mac.forEach((type) => {
+
+            expect(Utils.isMac(type)).to.be.true();
+        });
+
+
+        expect(Utils.isMac()).to.be.false();
+        done();
+
+    });
+
+
     it('should test isFQDN', (done) => {
 
         Types.notFQDN.forEach((type) => {
@@ -265,16 +283,99 @@ describe('Type', () => {
 
     });
 
-    it('should test isMac', (done) => {
+    it('should test isInt8', (done) => {
 
-        Types.mac.forEach((m) => {
+        Types.int8.forEach((m) => {
 
-            expect(Utils.isMac(m)).to.be.true();
+            expect(Utils.isInt8(m)).to.be.true();
         });
 
-        Types.notMac.forEach((m) => {
+        Types.notInt8.forEach((m) => {
 
-            expect(Utils.isMac(m)).to.be.false();
+            expect(Utils.isInt8(m)).to.be.false();
+        });
+
+        done();
+
+    });
+
+    it('should test isUint8', (done) => {
+
+        Types.uInt8.forEach((m) => {
+
+            expect(Utils.isUint8(m)).to.be.true();
+        });
+
+        Types.notUint8.forEach((m) => {
+
+            expect(Utils.isUint8(m)).to.be.false();
+
+        });
+
+        done();
+
+    });
+
+    it('should test isInt16', (done) => {
+
+        Types.int16.forEach((m) => {
+
+            expect(Utils.isInt16(m)).to.be.true();
+        });
+
+        Types.notInt16.forEach((m) => {
+
+            expect(Utils.isInt16(m)).to.be.false();
+        });
+
+        done();
+
+    });
+
+    it('should test isUint16', (done) => {
+
+        Types.uInt16.forEach((m) => {
+
+            expect(Utils.isUint16(m)).to.be.true();
+        });
+
+        Types.notUint16.forEach((m) => {
+
+            expect(Utils.isUint16(m)).to.be.false();
+
+        });
+
+        done();
+
+    });
+
+    it('should test isInt32', (done) => {
+
+        Types.int32.forEach((m) => {
+
+            expect(Utils.isInt32(m)).to.be.true();
+        });
+
+        Types.notInt32.forEach((m) => {
+
+            expect(Utils.isInt32(m)).to.be.false();
+        });
+
+        done();
+
+    });
+
+    it('should test isUint32', (done) => {
+
+        Types.uInt32.forEach((m) => {
+
+            expect(Utils.isUint32(m)).to.be.true();
+        });
+
+        Types.notUint32.forEach((m) => {
+
+            expect(Utils.isUint32(m)).to.be.false();
+
         });
 
         done();

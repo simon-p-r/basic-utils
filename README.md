@@ -70,6 +70,30 @@ Basic JS utils module
 
   - Returns boolean
 
+###### isInt8
+
+- Returns boolean
+
+###### isUint8
+
+- Returns boolean
+
+###### isInt16
+
+- Returns boolean
+
+###### isUint16
+
+- Returns boolean
+
+###### isInt32
+
+- Returns boolean
+
+###### isUint32
+
+- Returns boolean
+
 #### Utils
 
 ###### iterateObj
