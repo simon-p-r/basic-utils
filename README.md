@@ -96,6 +96,10 @@ Basic JS utils module
 
 - Returns boolean
 
+###### isAscii
+
+- Returns boolean
+
 #### Utils
 
 ###### iterateObj
