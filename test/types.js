@@ -111,8 +111,8 @@ describe('Type', () => {
 
         expect(Utils.isNumber(1234)).to.be.true();
         expect(Utils.isNumber(12.00)).to.be.true();
-        expect(Utils.isNumber(Infinity)).to.be.true();
 
+        expect(Utils.isNumber(Infinity)).to.be.false();
         expect(Utils.isNumber(NaN)).to.be.false();
         Types.nonInt.forEach((type) => {
 
@@ -378,6 +378,37 @@ describe('Type', () => {
 
         });
 
+        done();
+
+    });
+
+    it('should test isAscii', (done) => {
+
+        Types.ascii.forEach((m) => {
+
+            expect(Utils.isAscii(m)).to.be.true();
+        });
+
+        let t = '';
+        for (let i = 0; i <= 127; ++i) {
+            t += String.fromCharCode(i);
+        }
+
+        expect(Utils.isAscii(t)).to.be.true();
+
+        Types.notAscii.forEach((m) => {
+
+            expect(Utils.isAscii(m)).to.be.false();
+
+        });
+
+        let f = '';
+
+        for (let i = 128; i <= 1000; ++i) {
+            f += String.fromCharCode(i);
+        }
+
+        expect(Utils.isAscii(f)).to.be.false();
         done();
 
     });

@@ -400,6 +400,17 @@ module.exports = {
         undefined,
         {},
         []
+    ],
+
+    ascii: [
+        'a ascii string',
+        '@^&**((%$))'
+    ],
+
+    notAscii: [
+        '‽‽‽',
+        'This contains an invalid character \u0100',
+        null
     ]
 
 
