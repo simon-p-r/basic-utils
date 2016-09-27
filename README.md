@@ -1,104 +1,41 @@
 # basic-utils
-[![build status](https://travis-ci.org/simon-p-r/basic-utils.svg?branch=master)](https://travis-ci.org/simon-p-r/basic-utils)
-[![Coverage Status](https://coveralls.io/repos/github/simon-p-r/basic-utils/badge.svg?branch=master)](https://coveralls.io/github/simon-p-r/basic-utils?branch=master)
+
+[![Current Version](https://img.shields.io/npm/v/basic-utils.svg?maxAge=1000)](https://www.npmjs.org/package/basic-utils)
+[![dependency Status](https://img.shields.io/david/simon-p-r/basic-utils.svg?maxAge=1000)](https://david-dm.org/simon-p-r/basic-utils)
+[![devDependency Status](https://img.shields.io/david/dev/simon-p-r/basic-utils.svg?maxAge=1000)](https://david-dm.org/simon-p-r/basic-utils)
+[![Build Status](https://travis-ci.org/simon-p-r/basic-utils.svg?branch=master)](https://travis-ci.org/simon-p-r/basic-utils)
+[![Coveralls](https://img.shields.io/coveralls/simon-p-r/basic-utils.svg?maxAge=1000)](https://coveralls.io/github/simon-p-r/basic-utils)
 
 Basic JS utils module
 
 ### API
 
-#### Types
+#### Type checking returns boolean
 
-###### isObj
+ - isObj
+ - isString
+ - isArray
+ - isDate
+ - isRegex
+ - isFunction
+ - isNumber
+ - isNan
+ - isUndefined
+ - isNull
+ - isObjectID
+ - isIp
+ - isIp4
+ - isIp6
+ - isMac
+ - isFQDN
+ - isInt8
+ - isUint8
+ - isInt16
+ - isUint16
+ - isInt32
+ - isUnint32
+ - isAscii
 
- - Returns boolean
-
-###### isString
-
-  - Returns boolean
-
-###### isArray
-
-  - Returns boolean
-
-###### isDate
-
-  - Returns boolean
-
-###### isRegex
-
-  - Returns boolean
-
-###### isFunction
-
-  - Returns boolean
-
-###### isNumber
-
-  - Returns boolean
-
-###### isNan
-
-  - Returns boolean
-
-###### isUndefined
-
-  - Returns boolean
-
-###### isNull
-
-  - Returns boolean
-
-###### isObjectID
-
-  - Returns boolean
-
-###### isIp
-
-  - Returns boolean
-
-###### isIp4
-
-  - Returns boolean
-
-###### isIp6
-
-  - Returns boolean
-
-###### isMac
-
-  - Returns boolean
-
-###### isFQDN
-
-  - Returns boolean
-
-###### isInt8
-
-- Returns boolean
-
-###### isUint8
-
-- Returns boolean
-
-###### isInt16
-
-- Returns boolean
-
-###### isUint16
-
-- Returns boolean
-
-###### isInt32
-
-- Returns boolean
-
-###### isUint32
-
-- Returns boolean
-
-###### isAscii
-
-- Returns boolean
 
 #### Utils
 
@@ -120,7 +57,7 @@ Basic JS utils module
 
 ###### deserialize
 
-  - Returns either an error object or an js object deserialized from a json string
+  - Returns either an error object or a js object deserialized from a json string
 
 #### FileSystem
 
