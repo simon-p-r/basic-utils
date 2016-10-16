@@ -61,11 +61,11 @@ Basic JS utils module
 
 #### FileSystem
 
-###### dirExists
+###### isDir
 
   - Returns boolean if directory exists
 
-###### fileExists
+###### isFile
 
   - Returns boolean if file exists
 

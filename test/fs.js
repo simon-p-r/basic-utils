@@ -49,9 +49,9 @@ describe('File', () => {
 
     it('should test fileExists method', (done) => {
 
-        expect(Utils.fileExists(directory)).to.be.false();
-        expect(Utils.fileExists()).to.be.false();
-        expect(Utils.fileExists(file)).to.be.true();
+        expect(Utils.isFile(directory)).to.be.false();
+        expect(Utils.isFile()).to.be.false();
+        expect(Utils.isFile(file)).to.be.true();
         done();
 
     });
@@ -59,9 +59,9 @@ describe('File', () => {
     it('should test dirExists method', (done) => {
 
 
-        expect(Utils.dirExists()).to.be.false();
-        expect(Utils.dirExists(file)).to.be.false();
-        expect(Utils.dirExists(directory)).to.be.true();
+        expect(Utils.isDir()).to.be.false();
+        expect(Utils.isDir(file)).to.be.false();
+        expect(Utils.isDir(directory)).to.be.true();
         done();
 
     });
