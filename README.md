@@ -35,6 +35,9 @@ Basic JS utils module
  - isInt32
  - isUnint32
  - isAscii
+ - isError
+ - isRegexString
+ - isDateString
 
 
 #### Utils

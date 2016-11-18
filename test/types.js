@@ -24,6 +24,8 @@ describe('Type', () => {
 
         expect(Utils.isObj({})).to.be.true();
 
+        expect(!Utils.isObj({})).to.be.false();
+        expect(!Utils.isObj([])).to.be.true();
         done();
 
     });
@@ -36,6 +38,8 @@ describe('Type', () => {
         });
 
         expect(Utils.isNan(NaN)).to.be.true();
+        expect(!Utils.isNan(1)).to.be.true();
+        expect(!Utils.isNan(NaN)).to.be.false();
         done();
 
     });
@@ -48,6 +52,8 @@ describe('Type', () => {
             expect(Utils.isArray(type)).to.be.false();
         });
 
+        expect(!Utils.isArray({})).to.be.true();
+        expect(!Utils.isArray([])).to.be.false();
         done();
 
     });
@@ -61,6 +67,9 @@ describe('Type', () => {
             expect(Utils.isString(type)).to.be.false();
         });
 
+        expect(!Utils.isString(null)).to.be.true();
+        expect(!Utils.isString('string')).to.be.false();
+
         done();
 
     });
@@ -72,6 +81,8 @@ describe('Type', () => {
         expect(Utils.isDate('string')).to.be.false();
         expect(Utils.isDate([])).to.be.false();
         expect(Utils.isDate()).to.be.false();
+        expect(!Utils.isDate([])).to.be.true();
+        expect(!Utils.isDate(new Date())).to.be.false();
         done();
 
     });
@@ -83,6 +94,8 @@ describe('Type', () => {
         expect(Utils.isRegex('string')).to.be.false();
         expect(Utils.isRegex([])).to.be.false();
         expect(Utils.isRegex()).to.be.false();
+        expect(!Utils.isRegex([])).to.be.true();
+        expect(!Utils.isRegex(new RegExp())).to.be.false();
         done();
 
     });
@@ -412,6 +425,72 @@ describe('Type', () => {
         done();
 
     });
+
+    it('should test isDateString', (done) => {
+
+        const date = new Date();
+        expect(Utils.isDateString(date.toString())).to.be.true();
+        expect(Utils.isDateString(date.toISOString())).to.be.true();
+        expect(Utils.isDateString(date.toUTCString())).to.be.true();
+        expect(Utils.isDateString(date.toGMTString())).to.be.true();
+        expect(Utils.isDateString(date.toDateString())).to.be.true();
+        expect(Utils.isDateString('Fri Nov 32 2016')).to.be.false();
+        expect(Utils.isDateString(new Date('not a date string').toString())).to.be.false();
+        expect(Utils.isDateString([])).to.be.false();
+        done();
+
+    });
+
+    it('should test isRegexString', (done) => {
+
+        const regexp = new RegExp();
+        const macAddress = new RegExp(/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/);
+        expect(Utils.isRegexString(regexp.toString())).to.be.true();
+        expect(Utils.isRegexString(macAddress.toString())).to.be.true();
+        expect(Utils.isRegexString('/test/g')).to.be.true();
+        expect(Utils.isRegexString('/test/')).to.be.true();
+        expect(Utils.isRegexString('/test/^([')).to.be.false();
+        expect(Utils.isRegexString([])).to.be.false();
+        expect(Utils.isRegexString('test')).to.be.false();
+        expect(Utils.isRegexString(NaN)).to.be.false();
+        done();
+
+    });
+
+
+    it('should test isError', (done) => {
+
+        expect(Utils.isError(new Error())).to.be.true();
+        expect(Utils.isError(new TypeError())).to.be.true();
+        expect(Utils.isError(new RangeError())).to.be.true();
+        expect(Utils.isError(new ReferenceError())).to.be.true();
+        expect(Utils.isError(new SyntaxError())).to.be.true();
+        expect(Utils.isError('')).to.be.false();
+        done();
+
+    });
+
+
+    it('should test \'or\' comparisons', (done) => {
+
+        const value = { hello: 'world' };
+        const comparison = (Utils.isObj(value) || Utils.isArray(value));
+        expect(comparison).to.be.true();
+        done();
+
+    });
+
+
+    it('should test \'or\' not comparisons', (done) => {
+
+        const value = 'hello';
+        const comparison = (!Utils.isObj(value) || !Utils.isArray(value));
+        expect(comparison).to.be.true();
+        done();
+
+    });
+
+
 
 
 });
