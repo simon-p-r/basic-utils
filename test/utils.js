@@ -71,7 +71,6 @@ describe('Object', () => {
         const string = Utils.serialize(obj);
         const parsed = Utils.deserialize(string);
         expect(string).to.be.a.string();
-        console.log(string);
         expect(parsed).to.be.an.object();
         expect(parsed.date).to.be.a.date();
         expect(parsed.regexp).to.be.a.regexp();
