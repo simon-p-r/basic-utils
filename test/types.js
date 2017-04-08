@@ -465,7 +465,11 @@ describe('Type', () => {
         expect(Utils.isError(new RangeError())).to.be.true();
         expect(Utils.isError(new ReferenceError())).to.be.true();
         expect(Utils.isError(new SyntaxError())).to.be.true();
-        expect(Utils.isError('')).to.be.false();
+        expect(Utils.isError('error')).to.be.false();
+        expect(Utils.isError(null)).to.be.false();
+        expect(Utils.isError()).to.be.false();
+        expect(Utils.isError([])).to.be.false();
+        expect(Utils.isError({})).to.be.false();
         done();
 
     });
