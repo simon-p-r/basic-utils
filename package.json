@@ -1,6 +1,6 @@
 {
   "name": "basic-utils",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "description": "basic js utils",
   "main": "lib/index.js",
   "directories": {
@@ -18,8 +18,8 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "code": "^4.0.0",
-    "coveralls": "^2.13.0",
-    "lab": "^13.0.1"
+    "coveralls": "^2.13.1",
+    "lab": "^13.0.2"
   },
   "dependencies": {
     "deep-freeze": "0.0.1",
