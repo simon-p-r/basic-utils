@@ -1,5 +1,7 @@
 # basic-utils
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/simon-p-r/basic-utils.svg)](https://greenkeeper.io/)
+
 [![Current Version](https://img.shields.io/npm/v/basic-utils.svg?maxAge=1000)](https://www.npmjs.org/package/basic-utils)
 [![dependency Status](https://img.shields.io/david/simon-p-r/basic-utils.svg?maxAge=1000)](https://david-dm.org/simon-p-r/basic-utils)
 [![devDependency Status](https://img.shields.io/david/dev/simon-p-r/basic-utils.svg?maxAge=1000)](https://david-dm.org/simon-p-r/basic-utils?type=dev)
