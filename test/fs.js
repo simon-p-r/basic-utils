@@ -19,51 +19,42 @@ describe('File', () => {
     const directory = process.cwd();
     const file = Path.resolve(directory, 'package.json');
 
-    it('should expose mkDirSync method', (done) => {
+    it('should expose mkDirSync method', () => {
 
         expect(Utils.mkDirSync).to.be.a.function();
-        done();
-
     });
 
 
-    it('should expose mkDir method', (done) => {
+    it('should expose mkDir method', () => {
 
         expect(Utils.mkDir).to.be.a.function();
-        done();
     });
 
 
-    it('should expose rmDirSync method', (done) => {
+    it('should expose rmDirSync method', () => {
 
         expect(Utils.rmDirSync).to.be.a.function();
-        done();
     });
 
 
-    it('should expose rmDir method', (done) => {
+    it('should expose rmDir method', () => {
 
         expect(Utils.rmDir).to.be.a.function();
-        done();
     });
 
-    it('should test fileExists method', (done) => {
+    it('should test fileExists method', () => {
 
         expect(Utils.isFile(directory)).to.be.false();
         expect(Utils.isFile()).to.be.false();
         expect(Utils.isFile(file)).to.be.true();
-        done();
-
     });
 
-    it('should test dirExists method', (done) => {
+    it('should test dirExists method', () => {
 
 
         expect(Utils.isDir()).to.be.false();
         expect(Utils.isDir(file)).to.be.false();
         expect(Utils.isDir(directory)).to.be.true();
-        done();
-
     });
 
 

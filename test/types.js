@@ -15,7 +15,7 @@ const expect = Code.expect;
 
 describe('Type', () => {
 
-    it('should test isObj method', (done) => {
+    it('should test isObj method', () => {
 
         Types.nonObject.forEach((type) => {
 
@@ -26,11 +26,9 @@ describe('Type', () => {
 
         expect(!Utils.isObj({})).to.be.false();
         expect(!Utils.isObj([])).to.be.true();
-        done();
-
     });
 
-    it('should test isNan method', (done) => {
+    it('should test isNan method', () => {
 
         Types.nonNan.forEach((type) => {
 
@@ -40,11 +38,9 @@ describe('Type', () => {
         expect(Utils.isNan(NaN)).to.be.true();
         expect(!Utils.isNan(1)).to.be.true();
         expect(!Utils.isNan(NaN)).to.be.false();
-        done();
-
     });
 
-    it('should test isArray method', (done) => {
+    it('should test isArray method', () => {
 
         expect(Utils.isArray(['hello', 'world'])).to.be.true();
         Types.nonArray.forEach((type) => {
@@ -54,11 +50,9 @@ describe('Type', () => {
 
         expect(!Utils.isArray({})).to.be.true();
         expect(!Utils.isArray([])).to.be.false();
-        done();
-
     });
 
-    it('should test isString method', (done) => {
+    it('should test isString method', () => {
 
         expect(Utils.isString('hello')).to.be.true();
         expect(Utils.isString(`test ${process.env.TMP}`)).to.be.true();
@@ -69,12 +63,9 @@ describe('Type', () => {
 
         expect(!Utils.isString(null)).to.be.true();
         expect(!Utils.isString('string')).to.be.false();
-
-        done();
-
     });
 
-    it('should test isDate method', (done) => {
+    it('should test isDate method', () => {
 
         expect(Utils.isDate(new Date())).to.be.true();
         expect(Utils.isDate(new Date('11/30/2011'))).to.be.true();
@@ -83,11 +74,9 @@ describe('Type', () => {
         expect(Utils.isDate()).to.be.false();
         expect(!Utils.isDate([])).to.be.true();
         expect(!Utils.isDate(new Date())).to.be.false();
-        done();
-
     });
 
-    it('should test isRegex method', (done) => {
+    it('should test isRegex method', () => {
 
         expect(Utils.isRegex(new RegExp())).to.be.true();
         expect(Utils.isRegex(/ab+c/)).to.be.true();
@@ -96,11 +85,9 @@ describe('Type', () => {
         expect(Utils.isRegex()).to.be.false();
         expect(!Utils.isRegex([])).to.be.true();
         expect(!Utils.isRegex(new RegExp())).to.be.false();
-        done();
-
     });
 
-    it('should test isFunction method', (done) => {
+    it('should test isFunction method', () => {
 
         const func = (hello) => {
 
@@ -116,11 +103,9 @@ describe('Type', () => {
         expect(Utils.isFunction('string')).to.be.false();
         expect(Utils.isFunction([])).to.be.false();
         expect(Utils.isFunction()).to.be.false();
-        done();
-
     });
 
-    it('should test isNumber method', (done) => {
+    it('should test isNumber method', () => {
 
         expect(Utils.isNumber(1234)).to.be.true();
         expect(Utils.isNumber(12.00)).to.be.true();
@@ -131,11 +116,9 @@ describe('Type', () => {
 
             expect(Utils.isNumber(type)).to.be.false();
         });
-        done();
-
     });
 
-    it('should test isUndefined method', (done) => {
+    it('should test isUndefined method', () => {
 
         const nill = (hello) => {
 
@@ -152,11 +135,9 @@ describe('Type', () => {
         expect(Utils.isUndefined(undef)).to.be.true();
         expect(Utils.isUndefined(nill())).to.be.true();
         expect(Utils.isUndefined()).to.be.true();
-        done();
-
     });
 
-    it('should test isNull method', (done) => {
+    it('should test isNull method', () => {
 
         const nill = (hello) => {
 
@@ -179,11 +160,9 @@ describe('Type', () => {
         expect(Utils.isNull(/ab+c/)).to.be.false();
         expect(Utils.isNull('string')).to.be.false();
         expect(Utils.isNull([])).to.be.false();
-        done();
-
     });
 
-    it('should test isEmpty method', (done) => {
+    it('should test isEmpty method', () => {
 
         const nill = (hello) => {
 
@@ -206,11 +185,9 @@ describe('Type', () => {
         expect(Utils.isEmpty(/ab+c/)).to.be.false();
         expect(Utils.isEmpty('string')).to.be.false();
         expect(Utils.isEmpty([])).to.be.false();
-        done();
-
     });
 
-    it('should test isObjectID method', (done) => {
+    it('should test isObjectID method', () => {
 
         expect(Utils.isObjectID('534b4dcaadc0c2136938de3a')).to.be.true();
         Types.nonUndef.forEach((type) => {
@@ -222,11 +199,9 @@ describe('Type', () => {
 
             expect(Utils.isObjectID(type)).to.be.false();
         });
-        done();
-
     });
 
-    it('should test isIP', (done) => {
+    it('should test isIP', () => {
 
         Types.v4.forEach((type) => {
 
@@ -255,11 +230,9 @@ describe('Type', () => {
         expect(Utils.isIp()).to.be.false();
         expect(Utils.isIp4()).to.be.false();
         expect(Utils.isIp6()).to.be.false();
-        done();
-
     });
 
-    it('should test isMac', (done) => {
+    it('should test isMac', () => {
 
         Types.notMac.forEach((type) => {
 
@@ -271,14 +244,11 @@ describe('Type', () => {
             expect(Utils.isMac(type)).to.be.true();
         });
 
-
         expect(Utils.isMac()).to.be.false();
-        done();
-
     });
 
 
-    it('should test isFQDN', (done) => {
+    it('should test isFQDN', () => {
 
         Types.notFQDN.forEach((type) => {
 
@@ -292,11 +262,9 @@ describe('Type', () => {
 
 
         expect(Utils.isFQDN()).to.be.false();
-        done();
-
     });
 
-    it('should test isInt8', (done) => {
+    it('should test isInt8', () => {
 
         Types.int8.forEach((m) => {
 
@@ -307,12 +275,9 @@ describe('Type', () => {
 
             expect(Utils.isInt8(m)).to.be.false();
         });
-
-        done();
-
     });
 
-    it('should test isUint8', (done) => {
+    it('should test isUint8', () => {
 
         Types.uInt8.forEach((m) => {
 
@@ -324,12 +289,9 @@ describe('Type', () => {
             expect(Utils.isUint8(m)).to.be.false();
 
         });
-
-        done();
-
     });
 
-    it('should test isInt16', (done) => {
+    it('should test isInt16', () => {
 
         Types.int16.forEach((m) => {
 
@@ -340,12 +302,9 @@ describe('Type', () => {
 
             expect(Utils.isInt16(m)).to.be.false();
         });
-
-        done();
-
     });
 
-    it('should test isUint16', (done) => {
+    it('should test isUint16', () => {
 
         Types.uInt16.forEach((m) => {
 
@@ -357,12 +316,9 @@ describe('Type', () => {
             expect(Utils.isUint16(m)).to.be.false();
 
         });
-
-        done();
-
     });
 
-    it('should test isInt32', (done) => {
+    it('should test isInt32', () => {
 
         Types.int32.forEach((m) => {
 
@@ -373,12 +329,9 @@ describe('Type', () => {
 
             expect(Utils.isInt32(m)).to.be.false();
         });
-
-        done();
-
     });
 
-    it('should test isUint32', (done) => {
+    it('should test isUint32', () => {
 
         Types.uInt32.forEach((m) => {
 
@@ -390,12 +343,9 @@ describe('Type', () => {
             expect(Utils.isUint32(m)).to.be.false();
 
         });
-
-        done();
-
     });
 
-    it('should test isAscii', (done) => {
+    it('should test isAscii', () => {
 
         Types.ascii.forEach((m) => {
 
@@ -422,11 +372,9 @@ describe('Type', () => {
         }
 
         expect(Utils.isAscii(f)).to.be.false();
-        done();
-
     });
 
-    it('should test isDateString', (done) => {
+    it('should test isDateString', () => {
 
         const date = new Date();
         expect(Utils.isDateString(date.toString())).to.be.true();
@@ -437,11 +385,9 @@ describe('Type', () => {
         expect(Utils.isDateString('Fri Nov 32 2016')).to.be.false();
         expect(Utils.isDateString(new Date('not a date string').toString())).to.be.false();
         expect(Utils.isDateString([])).to.be.false();
-        done();
-
     });
 
-    it('should test isRegexString', (done) => {
+    it('should test isRegexString', () => {
 
         const regexp = new RegExp();
         const macAddress = new RegExp(/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/);
@@ -453,12 +399,10 @@ describe('Type', () => {
         expect(Utils.isRegexString([])).to.be.false();
         expect(Utils.isRegexString('test')).to.be.false();
         expect(Utils.isRegexString(NaN)).to.be.false();
-        done();
-
     });
 
 
-    it('should test isError', (done) => {
+    it('should test isError', () => {
 
         expect(Utils.isError(new Error())).to.be.true();
         expect(Utils.isError(new TypeError())).to.be.true();
@@ -470,31 +414,21 @@ describe('Type', () => {
         expect(Utils.isError()).to.be.false();
         expect(Utils.isError([])).to.be.false();
         expect(Utils.isError({})).to.be.false();
-        done();
-
     });
 
 
-    it('should test \'or\' comparisons', (done) => {
+    it('should test \'or\' comparisons', () => {
 
         const value = { hello: 'world' };
         const comparison = (Utils.isObj(value) || Utils.isArray(value));
         expect(comparison).to.be.true();
-        done();
-
     });
 
 
-    it('should test \'or\' not comparisons', (done) => {
+    it('should test \'or\' not comparisons', () => {
 
         const value = 'hello';
         const comparison = (!Utils.isObj(value) || !Utils.isArray(value));
         expect(comparison).to.be.true();
-        done();
-
     });
-
-
-
-
 });

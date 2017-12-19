@@ -64,6 +64,10 @@ Basic JS utils module
 
   - Returns either an error object or a js object deserialized from a json string
 
+###### omit
+
+  - Returns a filtered obj based on one or more keys to omit
+
 #### FileSystem
 
 ###### isDir
