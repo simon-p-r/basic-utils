@@ -6,6 +6,7 @@
 [![dependency Status](https://img.shields.io/david/simon-p-r/basic-utils.svg?maxAge=1000)](https://david-dm.org/simon-p-r/basic-utils)
 [![devDependency Status](https://img.shields.io/david/dev/simon-p-r/basic-utils.svg?maxAge=1000)](https://david-dm.org/simon-p-r/basic-utils?type=dev)
 [![Build Status](https://travis-ci.org/simon-p-r/basic-utils.svg?branch=master)](https://travis-ci.org/simon-p-r/basic-utils)
+[![Windows Build Status](https://img.shields.io/appveyor/ci/simon-p-r/basic-utils/master.svg?label=windows&style=flat-square&maxAge=2592000)](https://ci.appveyor.com/project/simon-p-r/basic-utils)
 [![Coveralls](https://img.shields.io/coveralls/simon-p-r/basic-utils.svg?maxAge=1000)](https://coveralls.io/github/simon-p-r/basic-utils)
 
 Basic JS utils module
