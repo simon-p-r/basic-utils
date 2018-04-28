@@ -377,13 +377,14 @@ describe('Type', () => {
     it('should test isDateString', () => {
 
         const date = new Date();
+        const invalid = new Date('not a date string').toString();
         expect(Utils.isDateString(date.toString())).to.be.true();
         expect(Utils.isDateString(date.toISOString())).to.be.true();
         expect(Utils.isDateString(date.toUTCString())).to.be.true();
         expect(Utils.isDateString(date.toGMTString())).to.be.true();
         expect(Utils.isDateString(date.toDateString())).to.be.true();
         expect(Utils.isDateString('Fri Nov 32 2016')).to.be.false();
-        expect(Utils.isDateString(new Date('not a date string').toString())).to.be.false();
+        expect(Utils.isDateString(invalid.toString())).to.be.false();
         expect(Utils.isDateString([])).to.be.false();
     });
 
@@ -430,5 +431,40 @@ describe('Type', () => {
         const value = 'hello';
         const comparison = (!Utils.isObj(value) || !Utils.isArray(value));
         expect(comparison).to.be.true();
+    });
+
+    it('should test isAlpha method', () => {
+
+        expect(Utils.isAlpha('Hello')).to.be.true();
+        expect(Utils.isAlpha(null)).to.be.false();
+        expect(Utils.isAlpha('12345hello')).to.be.false();
+    });
+
+
+    it('should test isNumeric method', () => {
+
+        expect(Utils.isNumeric('12345')).to.be.true();
+        expect(Utils.isNumeric(null)).to.be.false();
+        expect(Utils.isNumeric('12345hello')).to.be.false();
+    });
+
+    // it('should test isAlphaNumeric method', () => {
+    //     expect(Utils.isAlphaNumeric('12345')).to.be.true();
+    //     expect(Utils.isAlphaNumeric(null)).to.be.false();
+    //     expect(Utils.isAlphaNumeric('12345hello')).to.be.false();
+    // });
+
+    it('should test isUpperCase method', () => {
+
+        expect(Utils.isUpperCase('HELLO')).to.be.true();
+        expect(Utils.isUpperCase(null)).to.be.false();
+        expect(Utils.isUpperCase('12345hello')).to.be.false();
+    });
+
+    it('should test isLowerCase method', () => {
+
+        expect(Utils.isLowerCase('12345hello')).to.be.true();
+        expect(Utils.isLowerCase(null)).to.be.false();
+        expect(Utils.isLowerCase('HELLO')).to.be.false();
     });
 });
