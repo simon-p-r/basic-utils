@@ -93,10 +93,12 @@ describe('Type', () => {
 
             return hello;
         };
+
         const any = function (hello) {
 
             return hello;
         };
+
         expect(Utils.isFunction(func)).to.be.true();
         expect(Utils.isFunction(any)).to.be.true();
         expect(Utils.isFunction(/ab+c/)).to.be.false();
@@ -143,10 +145,12 @@ describe('Type', () => {
 
             return;
         };
+
         const func = (hello) => {
 
             return hello;
         };
+
         const undef = undefined;
         const def = 'notNull';
         expect(Utils.isNull(null)).to.be.true();
@@ -168,10 +172,12 @@ describe('Type', () => {
 
             return;
         };
+
         const func = (hello) => {
 
             return hello;
         };
+
         const undef = undefined;
         const def = 'notNull';
         expect(Utils.isEmpty(null)).to.be.true();
