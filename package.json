@@ -19,7 +19,7 @@
   "devDependencies": {
     "code": "^5.2.0",
     "coveralls": "^3.0.0",
-    "lab": "^15.4.1"
+    "lab": "^16.1.0"
   },
   "dependencies": {
     "deep-freeze": "0.0.1",
