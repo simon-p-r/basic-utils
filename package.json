@@ -1,6 +1,6 @@
 {
   "name": "basic-utils",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "basic js utils",
   "main": "lib/index.js",
   "directories": {
