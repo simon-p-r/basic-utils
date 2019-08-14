@@ -24,6 +24,6 @@
   "dependencies": {
     "deep-freeze": "0.0.1",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^3.0.0"
   }
 }
