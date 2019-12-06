@@ -1,7 +1,7 @@
 'use strict';
 
-const Code = require('code');
-const Lab = require('lab');
+const Code = require('@hapi/code');
+const Lab = require('@hapi/lab');
 
 // Fixtures
 
@@ -100,6 +100,106 @@ describe('Object', () => {
         expect(Utils.omit(obj, null)).to.equal(obj);
         expect(Utils.omit(obj, 'key')).to.equal({ test: 'hello' });
         expect(Utils.omit(obj, ['key', 'test'])).to.equal({ });
+
+    });
+
+
+    it('should test applyToDefaults method', () => {
+
+        const defaults = {
+            a: 1,
+            b: 2,
+            c: {
+                d: 3,
+                e: [5, 6]
+            },
+            f: 6,
+            g: 'test'
+        };
+
+        const obj = {
+            a: null,
+            c: {
+                e: [4]
+            },
+            f: 0,
+            g: {
+                h: 5
+            }
+        };
+
+        const result = Utils.applyToDefaults(defaults, obj);
+        expect(result.c.e).to.equal([4]);
+        expect(result.a).to.equal(1);
+        expect(result.b).to.equal(2);
+        expect(result.f).to.equal(0);
+        expect(result.g).to.equal({ h: 5 });
+
+    });
+
+    it('should test clone method', () => {
+
+        const defaults = {
+            a: 1,
+            b: 2,
+            c: {
+                d: 3,
+                e: [5, 6]
+            },
+            f: 6,
+            g: 'test'
+        };
+
+        const obj = {
+            a: null,
+            c: {
+                e: [4]
+            },
+            f: 0,
+            g: {
+                h: 5
+            }
+        };
+
+        const result = Utils.clone(defaults, obj);
+        expect(result.c.e).to.equal([5,6]);
+        expect(result.a).to.equal(1);
+        expect(result.b).to.equal(2);
+        expect(result.f).to.equal(6);
+        expect(result.g).to.equal('test');
+
+    });
+
+    it('should test merge method', () => {
+
+        const defaults = {
+            a: 1,
+            b: 2,
+            c: {
+                d: 3,
+                e: [5, 6]
+            },
+            f: 6,
+            g: 'test'
+        };
+
+        const obj = {
+            a: null,
+            c: {
+                e: [4]
+            },
+            f: 0,
+            g: {
+                h: 5
+            }
+        };
+
+        const result = Utils.merge(defaults, obj);
+        expect(result.c.e).to.equal([5,6,4]);
+        expect(result.a).to.equal(null);
+        expect(result.b).to.equal(2);
+        expect(result.f).to.equal(0);
+        expect(result.g).to.equal({ h: 5 });
 
     });
 

@@ -41,6 +41,9 @@ Basic JS utils module
  - isError
  - isRegexString
  - isDateString
+ - isAlpha
+ - isNumeric
+ - isAlphaNumeric
 
 
 #### Utils
@@ -68,6 +71,18 @@ Basic JS utils module
 ###### omit
 
   - Returns a filtered obj based on one or more keys to omit
+
+###### clone
+
+  - Returns a clone object, only functions remain copied by reference
+
+###### merge
+
+  - Returns a merged object from source and target, source object is destructively merged
+
+###### applyToDefaults
+
+  - Returns a merged object from source and target, source object is non-destructively merged
 
 #### FileSystem
 

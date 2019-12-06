@@ -1,13 +1,13 @@
 {
   "name": "basic-utils",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "basic js utils",
   "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "lab -a code -v -t 100 -L",
+    "test": "lab -a @hapi/code -v -t 100 -I globalThis -L",
     "coveralls": "lab -r lcov | coveralls"
   },
   "repository": {
@@ -17,13 +17,14 @@
   "author": "simon-p-r <simon.ricaldone@circabs.com> (https://github.com/simon-p-r)",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "code": "^5.2.1",
-    "coveralls": "^3.0.2",
-    "lab": "^17.0.2"
+    "@hapi/code": "^7.0.0",
+    "@hapi/lab": "^21.0.0",
+    "coveralls": "^3.0.9",
+    "rimraf": "^3.0.0"
   },
   "dependencies": {
+    "@hapi/hoek": "^8.5.0",
     "deep-freeze": "0.0.1",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.6.2"
+    "mkdirp": "^0.5.1"
   }
 }

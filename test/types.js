@@ -1,7 +1,7 @@
 'use strict';
 
-const Code = require('code');
-const Lab = require('lab');
+const Code = require('@hapi/code');
+const Lab = require('@hapi/lab');
 const Utils = require('../lib/index.js');
 
 // Fixtures
@@ -454,11 +454,12 @@ describe('Type', () => {
         expect(Utils.isNumeric('12345hello')).to.be.false();
     });
 
-    // it('should test isAlphaNumeric method', () => {
-    //     expect(Utils.isAlphaNumeric('12345')).to.be.true();
-    //     expect(Utils.isAlphaNumeric(null)).to.be.false();
-    //     expect(Utils.isAlphaNumeric('12345hello')).to.be.false();
-    // });
+    it('should test isAlphaNumeric method', () => {
+
+        expect(Utils.isAlphaNumeric('12345')).to.be.true();
+        expect(Utils.isAlphaNumeric('12345hello')).to.be.true();
+        expect(Utils.isAlphaNumeric(null)).to.be.false();
+    });
 
     it('should test isUpperCase method', () => {
 
