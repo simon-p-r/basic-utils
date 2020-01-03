@@ -17,7 +17,7 @@
   "author": "simon-p-r <simon.ricaldone@circabs.com> (https://github.com/simon-p-r)",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "@hapi/code": "^7.0.0",
+    "@hapi/code": "^8.0.1",
     "@hapi/lab": "^21.0.0",
     "coveralls": "^3.0.9",
     "rimraf": "^3.0.0"
