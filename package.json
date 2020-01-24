@@ -25,6 +25,6 @@
   "dependencies": {
     "@hapi/hoek": "^8.5.0",
     "deep-freeze": "0.0.1",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^1.0.3"
   }
 }
