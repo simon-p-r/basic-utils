@@ -23,7 +23,7 @@
     "rimraf": "^3.0.0"
   },
   "dependencies": {
-    "@hapi/hoek": "^8.5.0",
+    "@hapi/hoek": "^9.0.3",
     "deep-freeze": "0.0.1",
     "mkdirp": "^0.5.1"
   }
