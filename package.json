@@ -18,7 +18,7 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "@hapi/code": "^7.0.0",
-    "@hapi/lab": "^21.0.0",
+    "@hapi/lab": "^22.0.4",
     "coveralls": "^3.0.9",
     "rimraf": "^3.0.0"
   },
