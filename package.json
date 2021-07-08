@@ -1,6 +1,6 @@
 {
   "name": "basic-utils",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "basic js utils",
   "main": "lib/index.js",
   "directories": {
@@ -17,14 +17,14 @@
   "author": "simon-p-r <simon.ricaldone@circabs.com> (https://github.com/simon-p-r)",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "@hapi/code": "^7.0.0",
-    "@hapi/lab": "^21.0.0",
-    "coveralls": "^3.0.9",
-    "rimraf": "^3.0.0"
+    "@hapi/code": "^8.0.3",
+    "@hapi/lab": "^24.2.1",
+    "coveralls": "^3.1.1"
   },
   "dependencies": {
-    "@hapi/hoek": "^8.5.0",
+    "@hapi/hoek": "^9.2.0",
     "deep-freeze": "0.0.1",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2"
   }
 }
